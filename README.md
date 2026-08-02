@@ -24,3 +24,8 @@ Buka `index.html` terus dalam pelayar, atau gunakan pelayan statik seperti VS Co
 2. Dalam GitHub, buka **Settings** > **Pages**.
 3. Pilih **Deploy from a branch**, pilih branch `main` atau `master`, kemudian folder `/(root)`.
 4. Simpan. GitHub akan beri URL laman selepas deployment siap.
+
+
+## Status deployment
+
+Laman diterbitkan secara automatik daripada branch `main` menggunakan GitHub Pages.
