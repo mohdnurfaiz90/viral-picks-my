@@ -33,10 +33,14 @@ function renderHome() {
   activePlatform = null;
   app.innerHTML = `
     <section class="home" aria-labelledby="site-title">
+      <div class="home-ribbon ribbon-left" aria-hidden="true"></div>
+      <div class="home-ribbon ribbon-right" aria-hidden="true"></div>
+      <div class="home-spark spark-one" aria-hidden="true"></div>
+      <div class="home-spark spark-two" aria-hidden="true"></div>
       <div class="home-card">
-        <div class="avatar"><img src="${siteConfig.profileImage}" alt="Logo ${siteConfig.name}" /></div>
+        <div class="avatar-wrap"><div class="avatar"><img src="${siteConfig.profileImage}" alt="Logo ${siteConfig.name}" /></div></div>
         <h1 id="site-title">${siteConfig.name}</h1>
-        <p class="home-copy">${siteConfig.welcome} <strong>Pilih platform di bawah untuk mula melihat produk.</strong></p>
+        <p class="home-copy">Cari barang viral kegemaran anda dengan lebih mudah. <strong>Pilih platform di bawah untuk mula melihat produk.</strong></p>
         <div class="platform-list" aria-label="Pilih platform">
           ${siteConfig.platforms.map((platform) => `
             <button class="platform-button" type="button" data-platform="${platform.id}">
@@ -45,6 +49,14 @@ function renderHome() {
               <span class="chevron" aria-hidden="true">›</span>
             </button>`).join("")}
         </div>
+        <section class="quick-guide" aria-labelledby="guide-title">
+          <h2 id="guide-title">Cara mudah cari barang viral</h2>
+          <ol>
+            <li><span>1</span><strong>Pilih</strong><small>Pilih TikTok Shop atau Shopee.</small></li>
+            <li><span>2</span><strong>Cari</strong><small>Guna kategori atau ruangan carian.</small></li>
+            <li><span>3</span><strong>Teroka</strong><small>Tekan produk yang abg ingin lihat.</small></li>
+          </ol>
+        </section>
         <p class="home-footer">&copy; ${new Date().getFullYear()} ${siteConfig.name}</p>
       </div>
     </section>`;
