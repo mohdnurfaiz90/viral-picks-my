@@ -4,7 +4,7 @@
  */
 const siteConfig = {
   name: "Viral Picks MY",
-  profileImage: "assets/viral-picks-profile.png",
+  profileImage: "ChatGPT Image Jul 24, 2026, 12_39_16 PM.png",
   welcome: "Selamat datang ke showroom Viral Picks MY. Cari barang viral, trending dan pilihan harian yang disusun mengikut kategori supaya lebih mudah untuk anda terokai.",
   platforms: [
     { id: "tiktok", name: "TikTok Shop", note: "Terokai produk pilihan dari TikTok Shop", icon: "tiktok" },
