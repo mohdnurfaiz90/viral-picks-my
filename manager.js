@@ -1,4 +1,4 @@
-import{storageMode,signIn,listProducts,saveProduct,deleteProduct,uploadProductImage}from"./data-service.js";
+import{storageMode,signIn,listProducts,saveProduct,deleteProduct,uploadProductImage}from"./data-service.js?v=2";
 
 const $=selector=>document.querySelector(selector);
 const loginScreen=$("#login-screen"),managerApp=$("#manager-app"),form=$("#product-form"),drawer=$("#product-drawer"),backdrop=$("#drawer-backdrop");

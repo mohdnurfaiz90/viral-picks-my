@@ -1,4 +1,4 @@
-import{listProducts}from"./data-service.js";
+import{listProducts}from"./data-service.js?v=2";
 
 const grid=document.querySelector("#product-grid");
 const empty=document.querySelector("#empty-state");
