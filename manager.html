@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050b1d">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Viral Picks Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="manager-body">
+  <div class="manager-login" id="login-screen">
+    <div class="login-card">
+      <img class="login-logo" src="https://mohdnurfaiz90.github.io/viral-picks-my/assets/viral-picks-profile.png" alt="Viral Picks MY">
+      <h1>Viral Picks Manager</h1>
+      <p>Urus semua barang tanpa masuk GitHub atau sentuh coding.</p>
+      <form id="login-form">
+        <label>Email<input id="login-email" type="email" autocomplete="username" required placeholder="email abg"></label>
+        <label>Kata laluan<input id="login-password" type="password" autocomplete="current-password" required placeholder="••••••••"></label>
+        <button type="submit">Log masuk</button>
+      </form>
+      <button class="demo-entry hidden" id="demo-entry">Buka pratonton Manager</button>
+      <p class="login-note" id="login-note"></p>
+      <a href="index.html">← Kembali ke showroom</a>
+    </div>
+  </div>
+
+  <div class="manager-app hidden" id="manager-app">
+    <aside class="manager-sidebar">
+      <div class="manager-brand">
+        <img src="https://mohdnurfaiz90.github.io/viral-picks-my/assets/viral-picks-profile.png" alt="">
+        <strong>Viral Picks <span>MY</span></strong>
+      </div>
+      <nav>
+        <button class="active" data-nav="products">▣ <span>Semua barang</span></button>
+        <a href="index.html" target="_blank" rel="noopener">↗ <span>Lihat showroom</span></a>
+      </nav>
+      <div class="manager-user">
+        <div class="user-avatar">VP</div>
+        <div><strong>Manager</strong><small id="manager-email">Viral Picks MY</small></div>
+        <button id="logout-button" title="Log keluar">↪</button>
+      </div>
+    </aside>
+
+    <main class="manager-main">
+      <header class="manager-topbar">
+        <div><h1>Viral Picks Manager</h1><p>Tambah, edit, susun atau buang barang dari satu tempat.</p></div>
+        <a href="index.html" target="_blank" rel="noopener">Lihat showroom ↗</a>
+      </header>
+
+      <div class="demo-banner hidden" id="demo-banner"><strong>Mod pratonton setempat.</strong> Perubahan hanya nampak pada peranti ini sehingga storan online diaktifkan.</div>
+
+      <section class="manager-toolbar">
+        <button class="primary-button" id="add-product">＋ Tambah barang</button>
+        <label class="manager-search"><span>⌕</span><input id="manager-search" type="search" placeholder="Cari barang"></label>
+        <div class="manager-count"><span>Jumlah barang</span><strong id="manager-count">0</strong></div>
+      </section>
+
+      <div class="manager-tabs" id="manager-tabs">
+        <button class="active" data-platform="Semua">Semua</button>
+        <button data-platform="Shopee">Shopee</button>
+        <button data-platform="TikTok Shop">TikTok Shop</button>
+      </div>
+
+      <section class="product-table-wrap">
+        <div class="product-table-head"><span>Barang</span><span>Platform</span><span>Kategori</span><span>Status</span><span>Tindakan</span></div>
+        <div id="manager-list"></div>
+        <div class="manager-empty hidden" id="manager-empty">Belum ada barang dalam pilihan ini.</div>
+      </section>
+    </main>
+  </div>
+
+  <div class="drawer-backdrop hidden" id="drawer-backdrop"></div>
+  <aside class="product-drawer" id="product-drawer" aria-hidden="true">
+    <header><div><h2 id="drawer-title">Tambah barang</h2><p>Isi maklumat penting sahaja.</p></div><button id="close-drawer" aria-label="Tutup">×</button></header>
+    <form id="product-form">
+      <input id="product-id" type="hidden">
+      <label>Nama barang<input id="product-name" required maxlength="500" placeholder="Contoh: Botol Air 2.0L"></label>
+      <div class="form-pair">
+        <label>Platform<select id="product-platform" required><option value="Shopee">Shopee</option><option value="TikTok Shop">TikTok Shop</option></select></label>
+        <label>Kategori<input id="product-category" required list="category-options" placeholder="Makanan & Minuman"><datalist id="category-options"><option value="Perfume & Wangian Peribadi"><option value="Suplemen & Kesihatan"><option value="Makanan & Minuman"><option value="Beauty, Skincare & Penjagaan Diri"><option value="Home & Living"><option value="Automotif"><option value="Fashion, Outdoor & Aksesori"><option value="Elektronik, Kipas & Gadget"><option value="Beg & Aksesori Wanita"><option value="Lain-lain"></datalist></label>
+      </div>
+      <label>Link affiliate<input id="product-link" type="url" required placeholder="https://..."></label>
+      <fieldset class="image-fieldset">
+        <legend>Gambar barang</legend>
+        <div class="image-tabs"><button type="button" class="active" data-image-mode="upload">Upload gambar</button><button type="button" data-image-mode="url">Tampal link gambar</button></div>
+        <div class="upload-zone" id="upload-zone">
+          <input id="product-file" type="file" accept="image/jpeg,image/png,image/webp">
+          <div class="upload-icon">▧</div><strong>Pilih gambar barang</strong><span>JPG, PNG atau WEBP · maksimum 5MB</span>
+        </div>
+        <label class="image-url-field hidden" id="image-url-field">Link gambar<input id="product-image-url" type="url" placeholder="https://..."></label>
+        <div class="image-preview hidden" id="image-preview"><img alt="Pratonton gambar"><button type="button" id="remove-image">Buang gambar</button></div>
+      </fieldset>
+      <label class="visibility-toggle"><input id="product-active" type="checkbox" checked><span><strong>Paparkan dalam showroom</strong><small>Matikan untuk sorok sementara.</small></span></label>
+      <footer><button type="button" class="secondary-button" id="cancel-product">Batal</button><button type="submit" class="primary-button" id="save-product">Simpan barang</button></footer>
+    </form>
+  </aside>
+
+  <div class="confirm-modal hidden" id="confirm-modal">
+    <div><h2>Buang barang ini?</h2><p>Barang akan dipadam daripada showroom dan Manager.</p><footer><button class="secondary-button" id="cancel-delete">Batal</button><button class="danger-button" id="confirm-delete">Ya, buang</button></footer></div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="config.js"></script>
+  <script type="module" src="manager.js"></script>
+</body>
+</html>

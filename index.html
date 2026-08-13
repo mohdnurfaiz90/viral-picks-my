@@ -1,19 +1,62 @@
 <!doctype html>
 <html lang="ms">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Showroom pilihan produk viral daripada Viral Picks MY." />
-    <title>Viral Picks MY | Showroom</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='16' width='64' height='64' fill='%23020817'/%3E%3Cpath d='M15 33 27 45 50 18' fill='none' stroke='%23caff21' stroke-width='9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main id="app" class="app-shell"></main>
-    <script src="products-data.js"></script>
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050b1d">
+  <meta name="description" content="Barang viral pilihan Viral Picks MY untuk Shopee dan TikTok Shop.">
+  <title>Viral Picks MY | Showroom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="store-body">
+  <main class="store-shell">
+    <header class="store-header">
+      <div class="brand-lockup">
+        <img class="brand-logo" src="https://mohdnurfaiz90.github.io/viral-picks-my/assets/viral-picks-profile.png" alt="Logo Viral Picks MY">
+        <div>
+          <h1>Viral <span>Picks</span> <em>MY</em></h1>
+          <p>Barang viral pilihan, semuanya di satu tempat.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="store-tools" aria-label="Cari dan tapis barang">
+      <label class="search-box">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+        <input id="store-search" type="search" placeholder="Cari barang..." autocomplete="off">
+      </label>
+      <div class="platform-switch" id="platform-switch" aria-label="Pilih platform">
+        <button class="active" data-platform="Semua">Semua</button>
+        <button data-platform="Shopee"><span class="platform-dot shopee">S</span>Shopee</button>
+        <button data-platform="TikTok Shop"><span class="platform-dot tiktok">♪</span>TikTok Shop</button>
+      </div>
+      <div class="category-rail" id="category-rail" aria-label="Pilih kategori"></div>
+    </section>
+
+    <section>
+      <div class="store-section-head">
+        <h2>Pilihan untuk abg</h2>
+        <span id="product-count"></span>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="empty-state">
+        <div class="empty-icon">⌕</div>
+        <h2>Tiada barang ditemui</h2>
+        <p>Cuba ubah carian atau pilih kategori lain.</p>
+        <button id="reset-search">Cari lagi</button>
+      </div>
+    </section>
+
+    <footer class="store-footer">
+      <p>Terima kasih kerana menyokong pencipta kandungan tempatan.</p>
+      <strong>Viral <span>Picks</span> <em>MY</em></strong>
+      <a href="manager.html">Manager</a>
+    </footer>
+  </main>
+  <script src="config.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
 </html>

@@ -1,31 +1,26 @@
-# Laman Pautan Peribadi
+# Viral Picks MY Manager
 
-Laman pautan peribadi yang ringan untuk kongsi affiliate link dan media sosial.
+Showroom affiliate dan panel pengurusan barang tanpa perlu edit kod selepas sistem diaktifkan.
 
-## Tukar nama dan pautan
+## Fungsi
 
-Buka `script.js`, kemudian kemas kini bahagian `siteConfig`:
+- Tambah, edit, sorok, papar dan buang barang.
+- Upload gambar atau gunakan link gambar.
+- Susun barang naik dan turun.
+- Tapis Shopee atau TikTok Shop.
+- Carian dan kategori pada showroom.
+- Login Manager melalui Supabase Auth.
 
-- `name`, `profileImage`, serta `bio.text` dan `bio.accent` untuk profil.
-- `welcome` untuk ayat penerangan showroom di halaman utama.
-- `platforms` untuk nama platform yang dipaparkan.
-- `categories` untuk kategori produk.
-- `products` untuk produk, nombor, kategori, platform dan affiliate link.
+## Pratonton setempat
 
-Setiap pautan produk akan dibuka dalam tab baharu dengan perlindungan `noopener noreferrer`.
+Jika `config.js` masih kosong, sistem berjalan dalam mod demo menggunakan storan browser. Ia sesuai untuk menguji antaramuka tetapi perubahan tidak dikongsi kepada pelawat lain.
 
-## Jalankan secara setempat
+## Aktifkan storan online sekali sahaja
 
-Buka `index.html` terus dalam pelayar, atau gunakan pelayan statik seperti VS Code Live Server.
+1. Cipta projek Supabase percuma.
+2. Jalankan `supabase-setup.sql` dalam SQL Editor.
+3. Dalam Authentication, cipta seorang pengguna Manager menggunakan email abg.
+4. Salin Project URL dan anon public key ke `config.js`.
+5. Deploy semua fail ke hosting. Selepas itu semua urusan barang dibuat melalui `manager.html` sahaja.
 
-## Terbitkan ke GitHub Pages
-
-1. Hantar fail ini ke repositori GitHub.
-2. Dalam GitHub, buka **Settings** > **Pages**.
-3. Pilih **Deploy from a branch**, pilih branch `main` atau `master`, kemudian folder `/(root)`.
-4. Simpan. GitHub akan beri URL laman selepas deployment siap.
-
-
-## Status deployment
-
-Laman diterbitkan secara automatik daripada branch `main` menggunakan GitHub Pages.
+Jangan letakkan service-role key atau kata laluan dalam fail laman.
