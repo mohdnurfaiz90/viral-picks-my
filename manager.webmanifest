@@ -1,10 +1,10 @@
 {
-  "id": "/viral-picks-my/manager",
+  "id": "/viral-picks-my/manager.html",
   "name": "Viral Picks Manager",
   "short_name": "VP Manager",
   "description": "Urus produk Viral Picks MY dengan mudah.",
   "lang": "ms-MY",
-  "start_url": "/viral-picks-my/manager.html?source=pwa",
+  "start_url": "/viral-picks-my/manager.html?source=manager-pwa",
   "scope": "/viral-picks-my/",
   "display": "standalone",
   "background_color": "#050b1d",

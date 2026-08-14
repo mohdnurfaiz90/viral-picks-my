@@ -2,10 +2,13 @@ let deferredInstallPrompt = null;
 
 const isStandalone = () => window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
 const isIos = () => /iphone|ipad|ipod/i.test(navigator.userAgent);
+const isManagerPage = () => /manager\.html$/i.test(location.pathname);
+const appName = () => isManagerPage() ? "Viral Picks Manager" : "Viral Picks MY";
 
 function installHelpMessage() {
+  if (isStandalone() && isManagerPage()) return "Manager sudah dipasang sebagai aplikasi. Untuk akses lebih mudah di Windows, klik kanan ikon Manager pada taskbar dan pilih Pin to taskbar.";
   if (isIos()) return "Dalam Safari, tekan Share, pilih Add to Home Screen, hidupkan Open as Web App, kemudian tekan Add.";
-  return "Buka menu pelayar (tiga titik), kemudian pilih Install app atau Add to Home screen.";
+  return `Buka halaman ${appName()} dalam Chrome biasa, tekan menu tiga titik, kemudian pilih Install app. Selepas dipasang, pin ikon pada taskbar atau skrin utama.`;
 }
 
 function showInstallHelp() {
@@ -13,7 +16,7 @@ function showInstallHelp() {
   const dialog = document.createElement("dialog");
   dialog.id = "install-help-dialog";
   dialog.className = "install-help-dialog";
-  dialog.innerHTML = `<div class="install-help-content"><img src="assets/viral-picks-profile.png" alt=""><h2>Pasang Viral Picks MY</h2><p>${installHelpMessage()}</p><button type="button">Faham</button></div>`;
+  dialog.innerHTML = `<div class="install-help-content"><img src="assets/viral-picks-profile.png" alt=""><h2>${isStandalone()?"Aplikasi sudah dipasang":`Pasang ${appName()}`}</h2><p>${installHelpMessage()}</p><button type="button">Faham</button></div>`;
   document.body.append(dialog);
   dialog.querySelector("button").addEventListener("click", () => dialog.close());
   dialog.addEventListener("close", () => dialog.remove());
@@ -21,7 +24,7 @@ function showInstallHelp() {
 }
 
 async function requestInstall() {
-  if (isStandalone()) return;
+  if (isStandalone()) return showInstallHelp();
   if (!deferredInstallPrompt) return showInstallHelp();
   deferredInstallPrompt.prompt();
   await deferredInstallPrompt.userChoice;
@@ -31,6 +34,7 @@ async function requestInstall() {
 
 function updateInstallButtons() {
   document.querySelectorAll("[data-install-app]").forEach((button) => {
+    if(isStandalone()&&isManagerPage()){button.hidden=false;button.textContent="Manager sudah dipasang";return;}
     button.hidden = isStandalone();
   });
 }
