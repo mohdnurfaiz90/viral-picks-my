@@ -9,8 +9,9 @@
   "display": "standalone",
   "background_color": "#050b1d",
   "theme_color": "#050b1d",
+  "prefer_related_applications": false,
   "icons": [
-    {"src": "/viral-picks-my/assets/viral-picks-profile.png", "sizes": "1254x1254", "type": "image/png", "purpose": "any"},
-    {"src": "/viral-picks-my/assets/viral-picks-profile.png", "sizes": "1254x1254", "type": "image/png", "purpose": "maskable"}
+    {"src": "/viral-picks-my/assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "/viral-picks-my/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
   ]
 }
