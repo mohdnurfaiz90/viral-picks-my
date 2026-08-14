@@ -32,9 +32,16 @@ async function requestInstall() {
 function updateInstallButtons() {
   document.querySelectorAll("[data-install-app]").forEach((button) => {
     button.hidden = isStandalone();
-    button.onclick = requestInstall;
   });
 }
+
+// The showroom button is rendered after product data finishes loading.
+// Event delegation keeps it clickable even when it did not exist at DOMContentLoaded.
+document.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-install-app]");
+  if (!button) return;
+  requestInstall();
+});
 
 window.addEventListener("beforeinstallprompt", (event) => {
   event.preventDefault();
