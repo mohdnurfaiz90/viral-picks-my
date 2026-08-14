@@ -52,6 +52,7 @@ function renderHome() {
                 <span class="chevron" aria-hidden="true">›</span>
               </button>`).join("")}
           </div>
+          <button class="install-app-button" type="button" data-install-app><span aria-hidden="true">⇩</span> Pasang Aplikasi</button>
         </div>
         <div class="hero-visual" aria-hidden="true">
           <span class="spark spark-a">✦</span><span class="spark spark-b">✦</span><span class="spark spark-c">✦</span>

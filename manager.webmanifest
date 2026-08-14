@@ -1,0 +1,16 @@
+{
+  "id": "/viral-picks-my/manager",
+  "name": "Viral Picks Manager",
+  "short_name": "VP Manager",
+  "description": "Urus produk Viral Picks MY dengan mudah.",
+  "lang": "ms-MY",
+  "start_url": "/viral-picks-my/manager.html?source=pwa",
+  "scope": "/viral-picks-my/",
+  "display": "standalone",
+  "background_color": "#050b1d",
+  "theme_color": "#050b1d",
+  "icons": [
+    {"src": "/viral-picks-my/assets/viral-picks-profile.png", "sizes": "1254x1254", "type": "image/png", "purpose": "any"},
+    {"src": "/viral-picks-my/assets/viral-picks-profile.png", "sizes": "1254x1254", "type": "image/png", "purpose": "maskable"}
+  ]
+}
