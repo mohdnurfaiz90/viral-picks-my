@@ -24,6 +24,10 @@ function showInstallHelp() {
 }
 
 async function requestInstall() {
+  if (isManagerPage() && location.pathname.startsWith("/viral-picks-my/")) {
+    location.href = "https://mohdnurfaiz90.github.io/viral-picks-manager/";
+    return;
+  }
   if (isStandalone()) return showInstallHelp();
   if (!deferredInstallPrompt) return showInstallHelp();
   deferredInstallPrompt.prompt();
