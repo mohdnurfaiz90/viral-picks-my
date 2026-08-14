@@ -1,8 +1,8 @@
-const CACHE_NAME = "viral-picks-my-v7";
+const CACHE_NAME = "viral-picks-my-v8";
 const APP_SHELL = [
   "/viral-picks-my/", "/viral-picks-my/index.html", "/viral-picks-my/manager.html",
-  "/viral-picks-my/showroom.css?v=5", "/viral-picks-my/styles.css?v=5",
-  "/viral-picks-my/showroom.js?v=5", "/viral-picks-my/manager.js?v=5",
+  "/viral-picks-my/showroom.css?v=5", "/viral-picks-my/styles.css?v=8",
+  "/viral-picks-my/showroom.js?v=5", "/viral-picks-my/manager.js?v=8",
   "/viral-picks-my/data-service.js?v=3", "/viral-picks-my/config.js?v=3",
   "/viral-picks-my/legacy-images.js?v=4", "/viral-picks-my/pwa.js?v=6",
   "/viral-picks-my/app.webmanifest", "/viral-picks-my/manager.webmanifest",

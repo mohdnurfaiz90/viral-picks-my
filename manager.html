@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body class="manager-body">
   <div class="manager-login" id="login-screen">
@@ -52,26 +52,24 @@
 
     <main class="manager-main">
       <header class="manager-topbar">
-        <div><h1>Viral Picks Manager</h1><p>Tambah, edit, susun atau buang barang dari satu tempat.</p></div>
-        <div class="manager-top-actions"><button type="button" data-install-app>Pasang aplikasi</button><a href="index.html" target="_blank" rel="noopener">Lihat showroom ↗</a></div>
+        <div><h1>Viral Picks Manager</h1><p>Urus semua barang dengan mudah.</p></div>
+        <div class="manager-top-actions"><a href="index.html" target="_blank" rel="noopener">Lihat showroom ↗</a><button class="primary-button" id="add-product">＋ Tambah barang</button></div>
       </header>
 
       <div class="demo-banner hidden" id="demo-banner"><strong>Mod pratonton setempat.</strong> Perubahan hanya nampak pada peranti ini sehingga storan online diaktifkan.</div>
 
-      <section class="manager-toolbar">
-        <button class="primary-button" id="add-product">＋ Tambah barang</button>
+      <section class="manager-controls">
+        <div class="manager-tabs" id="manager-tabs">
+          <button class="active" data-platform="Semua">Semua</button>
+          <button data-platform="Shopee">Shopee</button>
+          <button data-platform="TikTok Shop">TikTok Shop</button>
+        </div>
         <label class="manager-search"><span>⌕</span><input id="manager-search" type="search" placeholder="Cari barang"></label>
-        <div class="manager-count"><span>Jumlah barang</span><strong id="manager-count">0</strong></div>
+        <div class="manager-count"><strong id="manager-count">0</strong><span>Produk</span></div>
       </section>
 
-      <div class="manager-tabs" id="manager-tabs">
-        <button class="active" data-platform="Semua">Semua</button>
-        <button data-platform="Shopee">Shopee</button>
-        <button data-platform="TikTok Shop">TikTok Shop</button>
-      </div>
-
       <section class="product-table-wrap">
-        <div class="product-table-head"><span>Barang</span><span>Platform</span><span>Kategori</span><span>Status</span><span>Tindakan</span></div>
+        <div class="product-table-head"><span>Produk</span><span>Platform</span><span>Kategori</span><span>Status</span><span>Tindakan</span></div>
         <div id="manager-list"></div>
         <div class="manager-empty hidden" id="manager-empty">Belum ada barang dalam pilihan ini.</div>
       </section>
@@ -109,7 +107,8 @@
   </div>
   <div class="toast" id="toast" role="status"></div>
   <script src="config.js?v=2"></script>
+  <script src="legacy-images.js?v=4"></script>
   <script src="pwa.js?v=6"></script>
-  <script type="module" src="manager.js?v=5"></script>
+  <script type="module" src="manager.js?v=8"></script>
 </body>
 </html>
